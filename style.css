@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main-container h1 {
+    text-align: center;
+}
+
+.game-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.box-container {
+    box-sizing: content-box;
+    display: flex;
+    width: 600px;
+    height: 600px;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+}
