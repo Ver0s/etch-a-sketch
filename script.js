@@ -19,7 +19,9 @@ setColor('colorBlack');
 size.addEventListener('input', () => {
     clearGrid();
     setGridSize(size.value);
-})  
+})
+
+// add functionality to tell which button is currently active
 clearColorsBtn.addEventListener('click', resetColors);
 colorBlack.addEventListener('click', () => setColor(colorBlack.value));
 colorRainbow.addEventListener('click', () => setColor(colorRainbow.value));
@@ -39,17 +41,10 @@ function setGridSize(size) {
     }
 }
 
+//this has to be improved
 function setColor(color) {
-    let opacity = 0.1;
     boxContainer.addEventListener('mouseover', (e) => {
         if (e.target.matches('.box')) {
-            // this shade thing doesn't really work
-            if (color === 'colorShade') {
-                opacity += 0.1
-                // console.log(opacity);
-                if (opacity > 1) opacity = 0;
-                e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-            }
             if (color === 'colorBlack') e.target.style.backgroundColor = 'black';
             if (color === 'colorRainbow') e.target.style.backgroundColor = getRandomColor();
             if (color === 'eraser') e.target.style.backgroundColor = '#fff';
