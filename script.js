@@ -4,7 +4,6 @@ const size = document.getElementById('size');
 const clearColorsBtn = document.getElementById('clear-colors');
 const eraser = document.getElementById('eraser');
 const colorBlack = document.getElementById('color-black');
-const colorShade = document.getElementById('color-shade');
 const colorRainbow = document.getElementById('color-rainbow');
 // slice and '+' are here because getComputedStyle gets size as string with px at the end
 // and I only want the converted number without the 'px'
@@ -21,11 +20,9 @@ size.addEventListener('input', () => {
     setGridSize(size.value);
 })
 
-// add functionality to tell which button is currently active
 clearColorsBtn.addEventListener('click', resetColors);
 colorBlack.addEventListener('click', () => setColor(colorBlack.value));
 colorRainbow.addEventListener('click', () => setColor(colorRainbow.value));
-colorShade.addEventListener('click', () => setColor(colorShade.value));
 eraser.addEventListener('click', () => setColor(eraser.value));
 
 // FUNCTIONS
@@ -41,7 +38,6 @@ function setGridSize(size) {
     }
 }
 
-//this has to be improved
 function setColor(color) {
     boxContainer.addEventListener('mouseover', (e) => {
         if (e.target.matches('.box')) {
